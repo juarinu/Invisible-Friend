@@ -1,0 +1,15 @@
+<% javascript "jquery", "invitation" %>
+<% form_for @list do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <div id="inv_list">
+    <% f.fields_for :invitations do |inv| %>
+    <%= render 'invitation_form', :f => inv %>
+    <% end %>
+  </div>
+  <%= link_to "New Invitation", nil, :id => "new_inv_link" %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

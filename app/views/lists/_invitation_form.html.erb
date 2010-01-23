@@ -1,0 +1,5 @@
+<%= f.label :guest_id %>
+<%= f.collection_select :guest_id, User.all, :id, :email, {:prompt => true} %>
+<%= f.check_box :_destroy %>
+<%= f.label :_destroy, "Delete" %>
+<br />
